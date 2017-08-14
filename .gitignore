@@ -1,3 +1,6 @@
+# python complied files
+*.pyc
+
 ## IDE config ##
 # PyCharm
 .idea/
