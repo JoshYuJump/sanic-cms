@@ -1,4 +1,4 @@
-# sanic-cms
+# Sanic-CMS
 The easy-to-use Python CMS system. build on Sanic framework, a fast python framework.
 
 【[中文文档](https://github.com/JoshYuJump/sanic-cms/wiki/Sanic-CMS-%E4%B8%AD%E6%96%87%E4%BB%8B%E7%BB%8D)】
