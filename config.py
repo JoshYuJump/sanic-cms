@@ -2,7 +2,7 @@
 
 DATABASE = {
     'DB_ENGINE': 'sqlite',
-    'DB_NAME': 'mydatabase',
+    'DB_NAME': 'db.sqlite',
 }
 
 

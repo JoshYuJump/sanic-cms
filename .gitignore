@@ -4,3 +4,6 @@
 ## IDE config ##
 # PyCharm
 .idea/
+
+# test database
+db.sqlite
