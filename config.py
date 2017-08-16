@@ -1,7 +1,15 @@
+from enum import Enum
+
+# const
+class Engine(Enum):
+    SQLITE = 'sqlite'
+    MYSQL = 'mysql'
+    POSTGRESQL = 'postgresql'
+
 # Database settings
 
 DATABASE = {
-    'DB_ENGINE': 'sqlite',
+    'DB_ENGINE': Engine.SQLITE,
     'DB_NAME': 'db.sqlite',
 }
 

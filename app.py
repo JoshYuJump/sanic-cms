@@ -19,7 +19,6 @@ template_package_loader = PackageLoader(app.name, 'cms/templates')
 template = SanicJinja2(app, loader=template_package_loader)
 
 # database create
-db.connect()
 if not os.path.exists(app.config.get('DB_NAME')):
     db.create_tables([User])
 
