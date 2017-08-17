@@ -8,9 +8,7 @@ from jinja2 import PackageLoader
 from sanic_jinja2 import SanicJinja2
 
 from config import DATABASE, THEMES
-from cms.models import db, User
-
-
+from cms.models import db, User, create_tables
 
 app = Sanic(__name__)
 app.config.update(DATABASE)
@@ -27,14 +25,11 @@ template = SanicJinja2(app, loader=template_package_loader)
 # Add listeners
 @app.listener('before_server_start')
 async def setup_db(app, loop):
-    # database create
-    db_lock = 'db.lock'
-    if not os.path.exists(db_lock):
-        db.create_tables([User])
-        open(db_lock, "w+").close()
+    # database table create
+    create_tables()
 
-# Add middleware
 
+# Add exception handler
 
 @app.exception(RequestTimeout)
 def timeout(request, exception):
@@ -46,12 +41,12 @@ def timeout(request, exception):
 
 # Add views
 
-
 async def index(request):
     """Index view"""
     return template.render('index.html', request, greetings='Welcome to Sanic-CMS')
 
 # Add routes
+
 app.add_route(index, '/')
 app.add_route(index, '/index.html')
 
