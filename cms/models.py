@@ -33,6 +33,7 @@ class User(BaseModel):
 
 class Category(BaseModel):
     name = CharField(unique=True)
+    slug = CharField(unique=True)
 
 
 class Content(BaseModel):
@@ -41,11 +42,13 @@ class Content(BaseModel):
     author = CharField()
     text = TextField()
     images = CharField()
+    slug = CharField(index=True)
     push_time = DateTimeField(default=datetime.now)
 
 
 class PageView(BaseModel):
     content = CharField()
+    slug = CharField(index=True)
 
 
 def create_tables():

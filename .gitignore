@@ -7,4 +7,3 @@
 
 # test database
 db.sqlite
-db.lock
