@@ -47,6 +47,7 @@ class Content(BaseModel):
 
 
 class PageView(BaseModel):
+    title = CharField()
     content = CharField()
     slug = CharField(index=True)
 
