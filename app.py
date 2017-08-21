@@ -29,8 +29,18 @@ async def setup_db(app, loop):
     create_tables()
 
 
-# Add exception handler
+@app.listener('before_server_start')
+async def setup_static_files_serve(app, loop):
+    '''support old website'''
+    if os.path.isdir('/admin'):
+        app.static('/admin', '/admin')
+        print('support /admin sucessful')
+    if os.path.isdir('/home'):
+        app.static('/home', '/home')
+        print('support /home sucessful')
 
+
+# Add exception handler
 @app.exception(RequestTimeout)
 def timeout(request, exception):
     if request is not None:
@@ -40,13 +50,12 @@ def timeout(request, exception):
 
 
 # Add views
-
 async def index(request):
     """Index view"""
     return template.render('index.html', request, greetings='Welcome to Sanic-CMS')
 
-# Add routes
 
+# Add routes
 app.add_route(index, '/')
 app.add_route(index, '/index.html')
 
