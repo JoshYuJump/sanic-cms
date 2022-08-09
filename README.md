@@ -3,6 +3,22 @@ The easy-to-use Python CMS system. build on Sanic framework, a fast python frame
 
 【[中文文档](https://github.com/JoshYuJump/sanic-cms/wiki/Sanic-CMS-%E4%B8%AD%E6%96%87%E4%BB%8B%E7%BB%8D)】
 
+---
+
+**IMPORTANT!**
+
+This project has been archived
+
+<a href="https://github.com/bali-framework/bali">
+  <img src="https://raw.githubusercontent.com/bali-framework/bali/master/docs/img/bali.png" alt='bali framework' />
+</a>
+
+You can take a look at our cloud-native framework [Bali](https://github.com/bali-framework/bali).
+
+https://github.com/bali-framework/bali
+
+---
+
 # Positioning
 
 * Corporate website
